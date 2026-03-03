@@ -17,7 +17,7 @@ const SidebarItem = ({ icon, label, isActive = false, onClick, isOpen }: Sidebar
                         {isOpen ? <img src="/images/bg.svg" alt="" className="absolute right-0 z-99 -translate-y-[32%]" /> : <img src="/images/bg-small.svg" alt="" className="absolute right-0 z-99 -translate-y-[32%]" /> } 
                         <div className="relative z-100 flex items-center gap-2 text-[rgba(19,36,80,1)]">
                             {icon}
-                            { isOpen && <p className="font-normal text-[14px] leading-5 tracking-[0%]">{label}</p> }
+                            { isOpen && <p className="font-bold text-[14px] leading-5 tracking-[0%]">{label}</p> }
                         </div>
                     </div>
                     :

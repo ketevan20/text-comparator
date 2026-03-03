@@ -1,22 +1,14 @@
 import { useState } from "react"
-import { arrowRight, checkIcon, mic, pdf, textComparable, voice } from "../../../icons/Icons"
 import SidebarItem from "../../atoms/SidebarItem/SidebarItem"
 import { motion } from "motion/react"
-
-const navItems = [
-  { icon: checkIcon, label: "მართლმწერი" },
-  { icon: textComparable, label: "ტექსტის შედარება" },
-  { icon: mic, label: <span className="flex items-center gap-1">ხმა {arrowRight} ტექსტი</span> },
-  { icon: voice, label: <span className="flex items-center gap-1">ტექსტი {arrowRight} ხმა</span> },
-  { icon: pdf, label: "PDF კონვერტაცია" },
-]
+import { navItems } from "../../atoms/NavItems/NavItems";
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="relative hidden md:block h-screen bg-[rgba(19,36,80,1)]" style={{width: open ? '240px' : '79px'}}>
+    <div className="sticky top-0 hidden md:block h-screen bg-[rgba(19,36,80,1)]" style={{width: open ? '240px' : '79px'}}>
       <div className="px-6 py-5">
         <div className="flex flex-col gap-3">
           <motion.button animate={{ rotate: open ? 0 : 180 }} transition={{duration: 0.1}} onClick={() => setOpen(!open)} className="self-end cursor-pointer"><img src="/images/chevrons-left.svg" alt="" /></motion.button>
