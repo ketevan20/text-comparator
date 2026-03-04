@@ -108,14 +108,14 @@ const MainContainer = () => {
           loading ? <Loader setLoading={setLoading}/> : 
             <>
               <div className="relative md:flex-1 h-47.5 md:h-108 bg-[rgba(240,247,255,1)] rounded-lg p-3 text-[rgba(56,58,72,1)] text-[18px] leading-6.5">
-                <div onClick={() => { setCompared(false); setTimeout(() => textareaRef1.current?.focus(), 0) }} className={`${compared ? 'block' : 'hidden'} absolute inset-0 p-3 cursor-text`}>{renderTexts(text1Result)}</div>
+                <div onClick={() => { setCompared(false); setTimeout(() => textareaRef1.current?.focus(), 0) }} className={`${compared ? 'block' : 'hidden'} absolute inset-0 p-3 cursor-text`} style={{ whiteSpace: 'pre-wrap', overflowY: 'auto' }}>{renderTexts(text1Result)}</div>
                 <textarea ref={textareaRef1} onChange={(e) => setText1(e.target.value)} value={text1} className={`${!compared ? 'block' : 'hidden'} w-full h-full resize-none outline-none placeholder:text-[18px]`} placeholder="დაიწყე წერა..." />
               </div>
 
               <img src="/images/compare.svg" className="self-center max-md:rotate-90" />
 
               <div className="relative md:flex-1 h-47.5 md:h-108 bg-[rgba(240,247,255,1)] rounded-lg p-3 text-[rgba(56,58,72,1)] text-[18px] leading-6.5">
-                <div onClick={() => { setCompared(false); setTimeout(() => textareaRef2.current?.focus(), 0) }} className={`${compared ? 'block' : 'hidden'} absolute inset-0 p-3 cursor-text`}>{renderTexts(text2Result)}</div>
+                <div onClick={() => { setCompared(false); setTimeout(() => textareaRef2.current?.focus(), 0) }} className={`${compared ? 'block' : 'hidden'} absolute inset-0 p-3 cursor-text`} style={{ whiteSpace: 'pre-wrap', overflowY: 'auto' }}>{renderTexts(text2Result)}</div>
                 <textarea ref={textareaRef2} onChange={(e) => setText2(e.target.value)} value={text2} className={`${!compared ? 'block' : 'hidden'} w-full h-full resize-none outline-none placeholder:text-[18px]`} placeholder="დაიწყე წერა..." />
               </div>
             </>
